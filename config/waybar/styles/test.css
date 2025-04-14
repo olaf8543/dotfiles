@@ -1,0 +1,68 @@
+
+/* ln -sf .config/waybar/styles/test.css .config/waybar/style.css */
+* {
+	font-size: 14px;
+	/* color: #06002b; */
+	color: #00ffa7;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+.module {
+	/* border-radius: 24px; */
+    padding: 0px 8px;
+    margin: 3px 0px 0px 0px;
+	/* background: linear-gradient(145deg, #00ffa7 30%, #00ff82 100%); */
+	/* background: #06002b; */
+}
+
+.modules-right {
+    margin-right: 9px;
+}
+
+.modules-left {
+    margin-left: 9px;
+}
+
+#workspaces button.active {
+    background-color: #4a4a4a;  /* Active workspace color */
+    border-radius: 16px;        /* Ensure pill shape for active */
+}
+
+#workspaces button:hover {
+    background-color: #666;     /* Hover effect */
+}
+
+#workspaces button {
+    border-radius: 16px;  /* Pill shape (adjust for desired roundness) */
+    padding: 0 12px;      /* Horizontal padding */
+    margin: 2px 3px;      /* Spacing between workspaces */
+    background-color: rgba(50, 50, 50, 0.5); /* Inactive workspace color */
+    transition: background-color 0.3s;
+  }
+
+#pulseaudio.muted {
+	color: rgba(0, 0, 0, 0);
+}
+
+button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+	background: inherit;
+}
+
+#submap {
+	margin-right: 1px;
+}
+
+tooltip {
+	background: linear-gradient(145deg, #00ffa7 30%, #00ff82 100%);
+	border-radius: 24px;
+}
+
+tooltip * {
+	color: #000000;
+}
+

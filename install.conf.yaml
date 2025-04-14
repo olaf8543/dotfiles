@@ -1,0 +1,14 @@
+- clean: ['~']
+
+- link:
+    ~/.profile: profile
+    ~/.gitconfig: gitconfig
+    ~/.zshrc: zshrc
+    ~/.config/fish: config/fish/
+    ~/.config/hypr: config/hypr/
+    ~/.config/waybar: config/waybar/
+    ~/.config/wofi: config/wofi/
+    ~/.config/nvim: config/nvim/
+    ~/.config/dunst: config/dunst/
+    ~/.config/kitty: config/kitty/
+    ~/.config/bat: config/bat/

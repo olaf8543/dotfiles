@@ -1,0 +1,72 @@
+/* Minimal Pill */
+* {
+	font-size: 14px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+.module {
+	padding: 0px 8px;
+    margin: 3px 0px 0px 0px;
+}
+
+.modules-right {
+    margin-right: 9px;
+	color: #00ffa7;
+}
+
+.modules-center {
+	color: #00ffa7;
+}
+
+.modules-left {
+    margin-left: 9px;
+}
+
+#workspaces button {
+    border-radius: 16px;
+    padding: 0 4px;
+	margin-right: 3px;
+    transition: background-color 0.1s;
+	transition: padding 0.1s;
+	color: #00ffa7;
+}
+
+#workspaces button.active {
+	background: linear-gradient(45deg, #00ffb3 0%, #00ff82 100%);
+	border: 1px solid #06002b;
+    border-radius: 24px;
+	color: #06002b;
+    padding: 0 16px;
+	font-weight: bold;
+}
+
+#workspaces button:hover {
+    background-color: #003824;
+}
+
+#pulseaudio.muted {
+	color: rgba(0, 0, 0, 0);
+}
+
+button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+	background: inherit;
+}
+
+#submap {
+	margin-right: 1px;
+}
+
+tooltip {
+	background: linear-gradient(145deg, #00ffa7 30%, #00ff82 100%);
+	border: 1px solid #06002b;
+	border-radius: 30px;
+}
+
+tooltip * {
+	color: #000000;
+}

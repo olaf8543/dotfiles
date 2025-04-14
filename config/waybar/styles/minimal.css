@@ -1,0 +1,65 @@
+/* Minimal */
+* {
+	font-size: 14px;
+	/* color: #06002b; */
+	color: #00ffa7;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+.module {
+	/* border-radius: 24px; */
+    padding: 0px 8px;
+    margin: 3px 0px 0px 0px;
+	/* background: linear-gradient(145deg, #00ffa7 30%, #00ff82 100%); */
+	/* background: #06002b; */
+}
+
+.modules-right {
+    margin-right: 9px;
+}
+
+.modules-left {
+    margin-left: 9px;
+}
+
+#workspaces .active {
+	font-weight: bold;
+	/* background: alpha(#001d13, 1); */
+}
+
+#workspaces button:hover {
+	background: alpha(#001d13, 0.25);
+}
+
+#workspaces button {
+	border: none;
+	margin: 0 1px;
+	/* border-radius: 24px; */
+}
+
+#pulseaudio.muted {
+	color: rgba(0, 0, 0, 0);
+}
+
+button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+	background: inherit;
+}
+
+#submap {
+	margin-right: 1px;
+}
+
+tooltip {
+	background: linear-gradient(145deg, #00ffa7 30%, #00ff82 100%);
+	border-radius: 24px;
+}
+
+tooltip * {
+	color: #000000;
+}
+
