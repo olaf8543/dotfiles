@@ -1,6 +1,7 @@
 /* Minimal Pill */
 * {
 	font-size: 14px;
+    font-family: "JetBrains Mono", monospace;
 }
 
 window#waybar {
@@ -62,11 +63,22 @@ button:hover {
 }
 
 tooltip {
-	background: linear-gradient(145deg, #00ffa7 30%, #00ff82 100%);
-	border: 1px solid #06002b;
+	background: #06002b;
+	border: 2px solid #00ffa7;
 	border-radius: 30px;
 }
 
 tooltip * {
-	color: #000000;
+	color: #00ffb3;
+    font-weight: bold;
+}
+
+menu {
+	border-radius: 15px;
+	background: #06002b;
+	color: #00ffa7;
+}
+
+menuitem {
+	border-radius: 15px;
 }

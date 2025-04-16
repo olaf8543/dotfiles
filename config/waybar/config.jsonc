@@ -1,51 +1,50 @@
 {
-	//Mininal Pill
-	"layer": "top",
-	"modules-left": [
-		"hyprland/workspaces",
-		"hyprland/submap"
-	],
-	"modules-center": [
-		"clock"
-	],
-	"modules-right": [
-		"pulseaudio",
-        "memory",
-		"cpu",
+    //Mininal Pill
+    // extra symbols to use       󱎃   󰈸 󱗗 󰗢   
+    "layer": "top",
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/submap"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
         "battery",
-		"network",
-        "tray"
-	],
+        "group/system",
+        "group/tray",
+        "custom/powericon"
+    ],
 
-	"cpu": {
-		"format": "",
-		"on-click": "kitty btop",
-		"interval": 1,
-		"states": {
-			"light": 30,
-			"warning": 50,
-			"critical": 80
-		}
-	},
-	"clock": {
-		"format": "  {:%I:%M %p}",
+    "cpu": {
+        "format": "",
+        "on-click": "kitty btop",
+        "interval": 1,
+        "states": {
+            "light": 30,
+            "warning": 50,
+            "critical": 80
+        }
+    },
+    "clock": {
+        "format": " {:%I:%M %p}",
         "tooltip": false
-	},
-	"network": {
-		"format-wifi": "",
-		"format-ethernet": "",
-		"tooltip-format-wifi": "Strength: {essid} {signalStrength}%"
-	},
-	"pulseaudio": {
-		"format": "   {volume}%",
-		"scroll-step": 5,
-		// "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-		"on-click": "pavucontrol"
-	},
-	"battery": {
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format-wifi": "Strength: {essid} {signalStrength}%"
+    },
+    "pulseaudio": {
+        "format": "  {volume}%",
+        "scroll-step": 5,
+        // "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "on-click": "pavucontrol"
+    },
+    "battery": {
         "format": "{icon}",
         "format-charging": "",
-        "format-plugged": "",
         "format-alt": "{capacity}% {time}",
         "format-icons": ["", "", "", "", ""],
         "tooltip-format-battery": "{capacity}% {time}"
@@ -53,28 +52,18 @@
     "tray": {
         "icon-size": 16,
         "spacing": 8,
-        "reverse-direction": true,
-        "menu-position": "right", // Menu opens to the right of icon
-        "show-passive-items": false, // Only show active items
-        "tooltip": false,
-        "format": "", // Chevron-down icon (Font Awesome)
-        "format-active": "", // Chevron-up when menu open
-        "on-click": "tray-toggle", // Custom script needed
-        "on-click-middle": "killall waybar && waybar", // Force refresh
-        "on-scroll-up": "tray-next",
-        "on-scroll-down": "tray-prev"
     },
     "memory": {
-		"format": "",
-		"tooltip-format": "Memory: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)",
-		"interval": 1
-	},
+        "format": "",
+        "tooltip-format": "Memory: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)",
+        "interval": 1
+    },
     "hyprland/workspaces": {
-		"show-special": true,
-		"format": "{}",
-		"format-icons": {
-			"default": ""
-		},
+        "show-special": true,
+        "format": "{}",
+        "format-icons": {
+            "default": ""
+        },
         "persistent-workspaces": {
             "1": [],
             "2": [],
@@ -82,5 +71,54 @@
             "4": [],
             "5": []
         }
-	}
+    },
+    "custom/tray": {
+        "format": "",
+        "tooltip-format": "Tray",
+    },
+    "custom/system": {
+        "format": "󱎃",
+        "tooltip-format": "System info",
+    },
+    "custom/powericon": {
+        "format": "",
+        "tooltip-format": "Power",
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/scripts/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "systemctl shutdown",
+            "reboot": "systemctl reboot",
+        },
+    },
+    "custom/notifications": {
+        "format": "",
+        "tooltip-format": "Notification",
+    },
+    "group/tray": {
+        "orientation": "horizontal",
+        "format": "{icon}",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "hidden",
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/tray",
+            "tray"
+        ]
+    },
+    "group/system": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "hidden",
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/system",
+            "memory",
+            "cpu",
+            "network",
+        ]
+    }
 }
