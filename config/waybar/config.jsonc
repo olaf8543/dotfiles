@@ -41,7 +41,8 @@
         "format-charging": "",
         "format-alt": "{capacity}% {time}",
         "format-icons": ["", "", "", "", ""],
-        "tooltip-format-battery": "{capacity}% {time}"
+        "tooltip-format-battery": "{capacity}% {time}",
+        "interval": 1,
     },
     "tray": {
         "icon-size": 16,

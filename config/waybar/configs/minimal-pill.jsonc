@@ -20,12 +20,6 @@
     "cpu": {
         "format": "",
         "on-click": "kitty btop",
-        "interval": 1,
-        "states": {
-            "light": 30,
-            "warning": 50,
-            "critical": 80
-        }
     },
     "clock": {
         "format": " {:%I:%M %p}",
@@ -47,7 +41,8 @@
         "format-charging": "",
         "format-alt": "{capacity}% {time}",
         "format-icons": ["", "", "", "", ""],
-        "tooltip-format-battery": "{capacity}% {time}"
+        "tooltip-format-battery": "{capacity}% {time}",
+        "interval": 1,
     },
     "tray": {
         "icon-size": 16,
@@ -73,12 +68,19 @@
         }
     },
     "custom/tray": {
+        //just an icon to click to open the "tray" group
         "format": "",
         "tooltip-format": "Tray",
     },
     "custom/system": {
+        //just an icon to click to open the "system" group
         "format": "󱎃",
         "tooltip-format": "System info",
+    },
+    "custom/notifications": {
+        //TODO notifications tab
+        "format": "",
+        "tooltip-format": "Notification",
     },
     "custom/powericon": {
         "format": "",
@@ -86,17 +88,12 @@
         "menu": "on-click",
         "menu-file": "~/.config/waybar/scripts/power_menu.xml",
         "menu-actions": {
-            "shutdown": "systemctl shutdown",
+            "shutdown": "systemctl poweroff",
             "reboot": "systemctl reboot",
         },
     },
-    "custom/notifications": {
-        "format": "",
-        "tooltip-format": "Notification",
-    },
     "group/tray": {
         "orientation": "horizontal",
-        "format": "{icon}",
         "drawer": {
             "transition-duration": 500,
             "children-class": "hidden",
