@@ -16,11 +16,20 @@ return {
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         local lspconfig = require("lspconfig")
-        lspconfig.clangd.setup({on_attach = on_attach, capabilities = capabilities })
-        lspconfig.jdtls.setup({on_attach = on_attach, capabilities = capabilities })
-        lspconfig.ts_ls.setup({on_attach = on_attach, capabilities = capabilities })
-        lspconfig.pylsp.setup({on_attach = on_attach, capabilities = capabilities })
-        lspconfig.rust_analyzer.setup({on_attach = on_attach, capabilities = capabilities })
-        lspconfig.lua_ls.setup({on_attach = on_attach, capabilities = capabilities })
+        local servers = {
+            "clangd",
+            "jdtls",
+            "ts_ls",
+            "pylsp",
+            "rust_analyzer",
+            "lua_ls"
+        }
+
+        for _, server in ipairs(servers) do
+            lspconfig[server].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+        end
     end,
 }
