@@ -20,12 +20,6 @@
     "cpu": {
         "format": "",
         "on-click": "kitty btop",
-        "interval": 1,
-        "states": {
-            "light": 30,
-            "warning": 50,
-            "critical": 80
-        }
     },
     "clock": {
         "format": " {:%I:%M %p}",
