@@ -1,11 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
     config = function()
-        local navic = require("nvim-navic")
         local on_attach = function(client, bufnr)
             if client.server_capabilities.documentSymbolProvider then
-                navic.attach(client, bufnr)
-                -- add definition keybinds to buffer
                 vim.keymap.set("n", "<leader>i", vim.lsp.buf.hover, {
                     buffer = bufnr, -- Makes the keybind buffer-local
                     desc = "Show hover documentation",
