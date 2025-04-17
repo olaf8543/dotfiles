@@ -67,12 +67,19 @@
         }
     },
     "custom/tray": {
+        //just an icon to click to open the "tray" group
         "format": "",
         "tooltip-format": "Tray",
     },
     "custom/system": {
+        //just an icon to click to open the "system" group
         "format": "󱎃",
         "tooltip-format": "System info",
+    },
+    "custom/notifications": {
+        //TODO notifications tab
+        "format": "",
+        "tooltip-format": "Notification",
     },
     "custom/powericon": {
         "format": "",
@@ -84,13 +91,8 @@
             "reboot": "systemctl reboot",
         },
     },
-    "custom/notifications": {
-        "format": "",
-        "tooltip-format": "Notification",
-    },
     "group/tray": {
         "orientation": "horizontal",
-        "format": "{icon}",
         "drawer": {
             "transition-duration": 500,
             "children-class": "hidden",
