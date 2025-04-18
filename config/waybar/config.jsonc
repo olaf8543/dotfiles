@@ -39,7 +39,7 @@
     },
     "battery": {
         "format": "{icon}",
-        "format-charging": "",
+        "format-charging": "󱐋",
         "format-icons": ["", "", "", "", ""],
         "tooltip-format": "{capacity}% {time}",
         "interval": 1,
