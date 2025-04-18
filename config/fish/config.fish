@@ -1,5 +1,4 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
     set -g fish_greeting
 
     # Aliases
@@ -36,6 +35,10 @@ if status is-interactive
     alias code "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
     alias nv "nvim ."
     alias cd "z"
+    alias ga "git add ."
+
+    # Abbreviations
+    abbr -a gm --set-cursor "git commit -m \"%\""
 
     #PATH variables
     #Most of these are done in my zshrc because its my system shell
