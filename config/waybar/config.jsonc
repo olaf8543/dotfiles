@@ -34,7 +34,8 @@
         "format": "  {volume}%",
         "scroll-step": 5,
         // "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "tooltip": false
     },
     "battery": {
         "format": "{icon}",

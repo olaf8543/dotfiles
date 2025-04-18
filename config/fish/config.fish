@@ -21,15 +21,10 @@ if status is-interactive
             eval "$action $path"
         end
     end
-    function snf
-        __fzf_helper f "bat --color=always --line-range :500 {}" "nvim"
-    end
-    function snd
-        __fzf_helper d "tree -C" "nvim"
-    end
-    function cds
-        __fzf_helper d "tree -C" "cd"
-    end
+
+    alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\""
+    alias snd "__fzf_helper d \"tree -C\" \"nvim\""
+    alias cds "__fzf_helper d \"tree -C\" \"cd\""
     alias hamil "kitty +kitten ssh orl6135@hamilton.se.rit.edu"
     alias clear "clear && fetch"
     alias code "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
