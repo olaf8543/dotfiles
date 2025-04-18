@@ -54,11 +54,6 @@
         "interval": 1
     },
     "hyprland/workspaces": {
-        "show-special": true,
-        "format": "{}",
-        "format-icons": {
-            "default": ""
-        },
         "persistent-workspaces": {
             "1": [],
             "2": [],

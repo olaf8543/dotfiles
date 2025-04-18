@@ -38,6 +38,9 @@ if status is-interactive
     #PATH variables
     #Most of these are done in my zshrc because its my system shell
 
+    #python environment, i keep reusing pypr_env just cuz
+    fish_add_path ~/pypr-env/bin
+
     # Miscellanious configuration
     # General fzf color scheme
     set -gx FZF_DEFAULT_OPTS "--color=fg:#d8dee9,hl:#00ffa7,fg+:#d8dee9,bg+:#2e2e2e,hl+:#00ffa7 \
