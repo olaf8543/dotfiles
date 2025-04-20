@@ -70,7 +70,7 @@ tooltip {
 }
 
 tooltip * {
-	color: @gradtwo;
+	color: @gradone;
     font-weight: bold;
 }
 
