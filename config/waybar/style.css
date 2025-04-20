@@ -37,7 +37,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-	background: linear-gradient(45deg, @gradtwo 0%, @gradone 100%);
+	background: linear-gradient(45deg, @gradone 0%, @gradtwo 100%);
 	border: 1px solid @bg;
     border-radius: 24px;
 	color: @bg;
