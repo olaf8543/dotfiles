@@ -43,7 +43,6 @@
         "format-icons": ["", "", "", "", ""],
         "tooltip-format": "{capacity}% {time}",
         "interval": 1,
-        "on-update": "./scripts/battery_notifier.sh"
     },
     "tray": {
         "icon-size": 16,
