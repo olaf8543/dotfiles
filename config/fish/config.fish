@@ -30,10 +30,9 @@ if status is-interactive
     alias code "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
     alias nv "nvim ."
     alias cd "z"
-    alias ga "git add ."
+    alias gt "lazygit"
 
     # Abbreviations
-    abbr -a gm --set-cursor "git commit -m \"%\""
 
     #PATH variables
     #Most of these are done in my zshrc because its my system shell

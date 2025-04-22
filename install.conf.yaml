@@ -12,3 +12,4 @@
     ~/.config/dunst: config/dunst/
     ~/.config/kitty: config/kitty/
     ~/.config/bat: config/bat/
+    ~/.config/lazygit: config/lazygit/
