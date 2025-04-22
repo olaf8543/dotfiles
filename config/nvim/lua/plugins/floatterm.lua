@@ -3,7 +3,7 @@ return {
     keys = {
         {
             "<leader>g",
-            "<cmd>FloatermNew --width=0.9 lazygit<CR>",
+            "<cmd>FloatermNew --height=0.8 --width=0.9 lazygit<CR>",
         },
     },
     config = function()
