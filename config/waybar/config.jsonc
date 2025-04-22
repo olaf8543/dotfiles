@@ -79,6 +79,7 @@
         "format": "",
         "tooltip-format": "Notifications",
         "on-click": "dunstctl history-pop",
+        "on-click-right": "dunstctl history-clear",
     },
     "custom/powericon": {
         "format": "",
