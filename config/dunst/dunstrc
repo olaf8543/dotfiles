@@ -10,16 +10,17 @@
     mouse_right_click = close_all
     padding = 10
     font = Jetbrains Mono 9
+    history_file = ~/.cache/dunst/history.log
 
-    [urgency_low]
+[urgency_low]
     background = "#06002b"
     foreground = "#00ffa7"
 
-    [urgency_normal]
+[urgency_normal]
     background = "#06002b"
     foreground = "#00ffa7"
 
-    [urgency_critical]
+[urgency_critical]
     background = "#06002b"
     foreground = "#00ffa7"
     frame_color = "#fa8787"

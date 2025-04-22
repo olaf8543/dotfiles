@@ -14,7 +14,8 @@
         "battery",
         "group/system",
         "group/tray",
-        "custom/powericon"
+        "custom/notifications",
+        "custom/powericon",
     ],
 
     "cpu": {
@@ -43,6 +44,7 @@
         "format-icons": ["", "", "", "", ""],
         "tooltip-format": "{capacity}% {time}",
         "interval": 1,
+        "on-update": "~/.config/waybar/scripts/battery-check.sh"
     },
     "tray": {
         "icon-size": 16,
@@ -75,7 +77,8 @@
     "custom/notifications": {
         //TODO notifications tab
         "format": "",
-        "tooltip-format": "Notification",
+        "tooltip-format": "Notifications",
+        "on-click": "dunstctl history-pop",
     },
     "custom/powericon": {
         "format": "",
