@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.api.nvim_create_autocmd("VimLeave", {
   pattern = "*",
   callback = function()
-    vim.fn.system("kitty @ set-background-opacity 0.6")
+    vim.fn.system("kitty @ set-background-opacity 0.5")
   end,
 })
 
