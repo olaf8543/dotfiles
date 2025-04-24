@@ -75,9 +75,9 @@
         "tooltip-format": "System info",
     },
     "custom/notifications": {
-        //TODO notifications tab
-        "format": "",
-        "tooltip-format": "Notifications",
+        "exec": "~/.config/waybar/scripts/notification-count.sh",
+        "interval": 5,
+        "return-type": "json",
         "on-click": "dunstctl history-pop",
         "on-click-right": "dunstctl history-clear",
     },
