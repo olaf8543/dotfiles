@@ -1,0 +1,32 @@
+This folder is not linked in the install yaml (rightfully so, as it is not a thing that 
+can be configured at all, and in general there is no directory in the .config file)
+However, I did edit lolcats functionality and built it into the system. To do that 
+yourself, simply follow these steps: 
+
+1:  Make sure you have ruby installed 
+    eg. sudo pacman -S ruby
+        sudo zypper in ruby
+        sudo apt install ruby
+        whatever
+
+2: edit the ./lib/lolcat/lol.rb file in the self rainbow function like this.
+        find these two lines
+
+            start_color = [0x00, 0xFF, 0x82]    # 00ff82
+            end_color   = [0x00, 0xFF, 0xB3]    # 00ffb3
+
+        change the color in the brackets to match whatever two colors you want
+        each element in the array is a color channel, so [0x00, 0xFF, 0x82] is
+        00FF82, becasue 0x(00), 0x(FF), 0x(82). Take each value after the 0x
+        givers you 00FF82. 
+
+2:  cd into this directory (lolcat) and build it with
+        gem build lolcat.gemspec
+        gem install --local ./lolcat-*.gem
+
+Either add it to your path in your shell or move the bin into your bin directory.
+
+        export PATH="$PATH:$HOME/path/to/lolcat/bin"
+        or
+        sudo mv ./bin/lolcat /usr/local/bin/lolcat
+
