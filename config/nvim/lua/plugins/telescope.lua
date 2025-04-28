@@ -55,7 +55,8 @@ return {
         vim.keymap.set('n', '<leader>F', function()
             local opts = {
                 layout_strategy = dynamic_layout(),
-                cwd = "~"
+                cwd = "~",
+                hidden = true,
             }
             require('telescope.builtin').find_files(opts)
         end)

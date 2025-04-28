@@ -75,7 +75,7 @@ tooltip * {
 }
 
 menu {
-	border-radius: 15px;
+	border-radius: 5px;
 	background: @bg;
 	color: @fg;
 }

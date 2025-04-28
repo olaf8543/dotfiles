@@ -10,8 +10,9 @@ if status is-interactive
         set -l type $argv[1]
         set -l preview_cmd $argv[2]
         set -l action $argv[3]
+        set -l dir $argv[4]
 
-        set -l selected (fd --type $type --hidden --exclude .git . ~ | fzf \
+        set -l selected (fd --type $type --hidden --exclude .git . $dir | fzf \
             --height 40% \
             --reverse \
             --preview "$preview_cmd {}")
@@ -22,9 +23,11 @@ if status is-interactive
         end
     end
 
-    alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\""
-    alias snd "__fzf_helper d \"tree -C\" \"nvim\""
-    alias cds "__fzf_helper d \"tree -C\" \"cd\""
+    alias snF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
+    alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
+    alias snD "__fzf_helper d \"tree -C\" \"nvim\" ~"
+    alias snd "__fzf_helper d \"tree -C\" \"nvim\" ."
+    alias cds "__fzf_helper d \"tree -C\" \"cd\" ~"
     alias hamil "kitty +kitten ssh orl6135@hamilton.se.rit.edu"
     alias clear "clear && fetch"
     alias code "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
