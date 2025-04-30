@@ -78,7 +78,8 @@
         "exec": "~/.config/waybar/scripts/notification-count.sh",
         "interval": 5,
         "return-type": "json",
-        "on-click": "dunstctl history-pop",
+        //"on-click": "dunstctl history-pop",
+        "on-click": "~/.config/waybar/scripts/notifications-menu.sh",
         "on-click-right": "dunstctl history-clear",
     },
     "custom/powericon": {

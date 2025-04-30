@@ -8,6 +8,7 @@
     ~/.config/hypr: config/hypr/
     ~/.config/waybar: config/waybar/
     ~/.config/wofi: config/wofi/
+    ~/.config/fuzzel: config/fuzzel/
     ~/.config/nvim: config/nvim/
     ~/.config/dunst: config/dunst/
     ~/.config/kitty: config/kitty/
