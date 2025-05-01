@@ -2,9 +2,6 @@ if status is-interactive
     set -g fish_greeting
 
     # Aliases
-    function fetch
-        paste -d ' ' (cat ~/.config/neofetch/txtfiles/ror2.txt | psub) (neofetch | psub) | lolcat --spread 0.8
-    end
     function __fzf_helper
         # Arguments: $argv[1] = fd type (f/d), $argv[2] = preview command, $argv[3] = action command
         set -l type $argv[1]
@@ -23,6 +20,7 @@ if status is-interactive
         end
     end
 
+    alias fetch "paste -d ' ' (cat ~/.config/neofetch/txtfiles/ror2.txt | psub) (neofetch | psub) | lolcat --spread 0.8"
     alias snF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
     alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
     alias snD "__fzf_helper d \"tree -C\" \"nvim\" ~"
