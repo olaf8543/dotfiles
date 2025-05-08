@@ -13,7 +13,6 @@ return {
         local cmp = require("cmp")
         local luasnip = require("luasnip")
         local lspkind = require("lspkind")
-
         require("luasnip.loaders.from_vscode").lazy_load()
 
         cmp.setup({
@@ -60,8 +59,8 @@ return {
                 { name = "copilot", priority = 1000 },
                 { name = "nvim_lsp" },
                 { name = "luasnip" }, --snippets
-                { name = "buffer" }, --text within current buffer
-                { name = "path" }, --file system paths
+                { name = "buffer" },  --text within current buffer
+                { name = "path" },    --file system paths
             }),
             --configure lspkind for vs-code like pictograms in completion menu
             formatting = {
