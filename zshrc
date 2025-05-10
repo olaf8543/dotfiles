@@ -29,7 +29,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 alias fetch="paste -d ' ' <(cat ~/.config/neofetch/txtfiles/ror2.txt) <(neofetch) | lolcat --spread 0.8"
 alias hamil='kitty +kitten ssh orl6135@hamilton.se.rit.edu'
 alias clearf="clear && fetch"
-alias code="code --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias lg="lazygit"
 
 # Keybinds
 
