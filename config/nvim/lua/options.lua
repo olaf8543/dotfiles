@@ -24,19 +24,17 @@ vim.opt.ignorecase = true
 vim.opt.termguicolors = true
 
 vim.g.mapleader = " "
-vim.api.nvim_set_hl(0, "WinBar", { fg = "#ADD7FF", bg = "NONE" })
 
 vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  callback = function()
-    vim.fn.system("kitty @ set-background-opacity 0.7")
-  end,
+    pattern = "*",
+    callback = function()
+        vim.fn.system("kitty @ set-background-opacity 0.7")
+    end,
 })
 
 vim.api.nvim_create_autocmd("VimLeave", {
-  pattern = "*",
-  callback = function()
-    vim.fn.system("kitty @ set-background-opacity 0.5")
-  end,
+    pattern = "*",
+    callback = function()
+        vim.fn.system("kitty @ set-background-opacity 0.5")
+    end,
 })
-

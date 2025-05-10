@@ -1,6 +1,7 @@
 return {
     "zbirenbaum/copilot.lua",
     dependencies = "zbirenbaum/copilot-cmp",
+    cond = not vim.g.vscode,
     config = function()
         require("copilot").setup({
             suggestion = { enabled = false },

@@ -9,6 +9,7 @@ return {
         'onsails/lspkind.nvim',
         'hrsh7th/cmp-nvim-lsp',
     },
+    cond = not vim.g.vscode,
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")

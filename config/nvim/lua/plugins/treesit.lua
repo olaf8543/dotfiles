@@ -1,7 +1,7 @@
 return {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-        require'nvim-treesitter.configs'.setup({
+        require 'nvim-treesitter.configs'.setup({
             -- A list of parser names, or "all" (the listed parsers MUST always be installed)
             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "rust", "cpp" },
 
@@ -66,7 +66,7 @@ return {
                     -- mapping query_strings to modes.
                     selection_modes = {
                         ['@parameter.outer'] = 'v', -- charwise
-                        ['@function.outer'] = 'V', -- linewise
+                        ['@function.outer'] = 'V',  -- linewise
                         ['@class.outer'] = '<c-v>', -- blockwise
                     },
                     -- If you set this to `true` (default is `false`) then any textobject is

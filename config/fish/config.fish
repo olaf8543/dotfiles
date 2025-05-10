@@ -19,6 +19,10 @@ if status is-interactive
             eval "$action $path"
         end
     end
+    function code
+        set -lx ELECTRON_OZONE_PLATFORM wayland
+        /usr/bin/code --force-device-scale-factor=1 $argv
+    end
 
     alias fetch "paste -d ' ' (cat ~/.config/neofetch/txtfiles/ror2.txt | psub) (neofetch | psub) | lolcat --spread 0.8"
     alias snF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
@@ -28,7 +32,7 @@ if status is-interactive
     alias cds "__fzf_helper d \"tree -C\" \"cd\" ~"
     alias hamil "kitty +kitten ssh orl6135@hamilton.se.rit.edu"
     alias clear "clear && fetch"
-    alias code "code --enable-features=UseOzonePlatform --ozone-platform=wayland"
+    # alias code "ELECTRON_OZONE_PLATFORM=wayland code --force-device-scale-factor=1"
     alias nv "nvim ."
     alias cd "z"
     alias gt "lazygit"

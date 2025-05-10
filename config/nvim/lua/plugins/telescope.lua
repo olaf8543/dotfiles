@@ -1,10 +1,11 @@
 return {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
     dependencies = {
         'nvim-lua/plenary.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-
+    cond = not vim.g.vscode,
     config = function()
         require('telescope').load_extension('fzf')
 
@@ -17,7 +18,7 @@ return {
             }
         }
 
-        require('telescope').setup{
+        require('telescope').setup {
             defaults = {
                 mappings = {
                     i = {
@@ -37,7 +38,7 @@ return {
         }
 
         --dynamic layout function: changes layout based on window width
-        local dynamic_layout = function ()
+        local dynamic_layout = function()
             local window_threshold = 120
             local win_width = vim.fn.winwidth(0)
 

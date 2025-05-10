@@ -1,5 +1,6 @@
 return {
     "rcarriga/nvim-notify",
+    cond = not vim.g.vscode,
     config = function()
         require("notify").setup({
             background_colour = "#1a1b26", -- Your theme's background color
