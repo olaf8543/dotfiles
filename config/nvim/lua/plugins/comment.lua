@@ -1,7 +1,7 @@
 return {
     'numToStr/Comment.nvim',
 
-    config = function ()
+    config = function()
         local comment = require('Comment')
 
         comment.setup({
@@ -32,7 +32,7 @@ return {
                 ---Add comment on the line below
                 below = '<leader>co',
                 ---Add comment at the end of line
-                eol = '<leader>ce',
+                eol = '<leader>ca',
             },
             ---Enable keybindings
             ---NOTE: If given `false` then the plugin won't create any mappings
