@@ -36,6 +36,7 @@ if status is-interactive
     alias nv "nvim ."
     alias cd "z"
     alias gt "lazygit"
+    alias ls "exa"
 
     # Abbreviations
 
