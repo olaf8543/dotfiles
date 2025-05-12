@@ -24,7 +24,7 @@ if status is-interactive
         /usr/bin/code --force-device-scale-factor=1 $argv
     end
 
-    alias fetch "paste -d ' ' (cat ~/.config/neofetch/txtfiles/ror2.txt | psub) (neofetch | psub) | lolcat --spread 0.8"
+    alias fetch "fastfetch | lolcat --spread 0.8"
     alias snF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
     alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
     alias snD "__fzf_helper d \"tree -C\" \"nvim\" ~"

@@ -9,6 +9,7 @@
     ~/.config/waybar: config/waybar/
     ~/.config/wofi: config/wofi/
     ~/.config/fuzzel: config/fuzzel/
+    ~/.config/fastfetch: config/fastfetch/
     ~/.config/nvim: config/nvim/
     ~/.config/dunst: config/dunst/
     ~/.config/kitty: config/kitty/
