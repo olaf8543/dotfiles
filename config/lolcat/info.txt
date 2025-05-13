@@ -1,15 +1,42 @@
-This folder is not linked in the install yaml (rightfully so, as it is not a thing that 
-can be configured at all, and in general there is no directory in the .config file)
-However, I did edit lolcats functionality and built it into the system. To do that 
-yourself, simply follow these steps: 
+You might notice that nothing is in here but lolcat is used in my shell config and 
+it should be something that you want to install onto the system because it looks so
+sick. I instead decided to opt instead give instructions on how to do this so it is 
+as easy as possible.
 
-1:  Make sure you have ruby installed 
+1:  Make sure you have ruby installed. I am not actually sure if you need it,
+    but i installed it because i thought i would need it, but after figuring
+    out i honestly would bet that it is unnecessary. I doubt its harmful though
+    so i felt like it would be worth it to mention that ruby might need to be
+    installed.
+
     eg. sudo pacman -S ruby
         sudo zypper in ruby
         sudo apt install ruby
         whatever
 
-2: edit the ./lib/lolcat/lol.rb file in the self rainbow function like this.
+2:  Clone the official repo somewhere on your system and edit the ./lib/lolcat/lol.rb 
+    file in the self rainbow function like this.
+        git clone https://github.com/busyloop/lolcat
+
+        replace the standard self rainbow function with this
+
+  def self.rainbow(freq, i)
+    # Define your start and end colors in RGB
+    start_color = [0xFD, 0xF0, 0x87]
+    end_color   = [0xFA, 0x69, 0x4E]
+
+    # Calculate interpolation factor (0.0 to 1.0)
+    t = (Math.sin(freq * i) + 1) / 2.0  # Maps to 0-1 range
+
+    # Linear interpolation for each RGB component
+    r = (start_color[0] + (end_color[0] - start_color[0]) * t).round
+    g = (start_color[1] + (end_color[1] - start_color[1]) * t).round
+    b = (start_color[2] + (end_color[2] - start_color[2]) * t).round
+
+    "#%02X%02X%02X" % [r, g, b]
+  end
+
+3: edit the ./lib/lolcat/lol.rb file in the self rainbow function like this.
         find these two lines
 
             start_color = [0x00, 0xFF, 0x82]    # 00ff82
@@ -20,13 +47,8 @@ yourself, simply follow these steps:
         00FF82, becasue 0x(00), 0x(FF), 0x(82). Take each value after the 0x
         gives you 00FF82. 
 
-2:  cd into this directory (lolcat) and build it with
-        gem build lolcat.gemspec
-        gem install --local ./lolcat-*.gem
-
-Either add it to your path in your shell or move the bin into your bin directory.
+Either add it to your path in your shell
 
         export PATH="$PATH:$HOME/path/to/lolcat/bin"
-        or
-        sudo mv ./bin/lolcat /usr/local/bin/lolcat
 
+this should work and you should have a custom lolcat

@@ -19,6 +19,7 @@ if status is-interactive
             eval "$action $path"
         end
     end
+
     function code
         set -lx ELECTRON_OZONE_PLATFORM wayland
         /usr/bin/code --force-device-scale-factor=1 $argv
@@ -45,6 +46,7 @@ if status is-interactive
 
     #python environment, i keep reusing pypr_env just cuz
     fish_add_path ~/pypr-env/bin
+    fish_add_path ~/lolcat/bin
 
     # Miscellanious configuration
     # General fzf color scheme

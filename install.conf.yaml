@@ -4,7 +4,10 @@
     ~/.profile: profile
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
-    ~/.config/fish: config/fish/
+    ~/.config/nushell: {
+      "path": "config/nushell",
+      "force": true
+    }
     ~/.config/hypr: config/hypr/
     ~/.config/waybar: config/waybar/
     ~/.config/wofi: config/wofi/

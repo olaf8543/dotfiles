@@ -38,7 +38,7 @@ window#waybar {
 
 #workspaces button.active {
 	background: linear-gradient(45deg, @gradone 0%, @gradtwo 100%);
-	border: 1px solid @bg;
+	border: 1px solid @gradtwo;
     border-radius: 24px;
 	color: @bg;
     padding: 0 16px;
@@ -46,7 +46,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background-color: @hover;
+	background-color: alpha(@hover, 0.7);
+	border: 1px solid @gradtwo;
 }
 
 #pulseaudio.muted {
