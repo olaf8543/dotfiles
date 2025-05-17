@@ -1,0 +1,16 @@
+Whale-Watchers (Has assigned conservation challenges) 
+Marine-Biologists (Assign conservation challenges to whale-watchers and manages content of the challenges; Contains Points)
+Conservation Challenges (Consist of knowledge tests and tracking activities; Gives points)
+Knowledge Tests (Contains questions for whale watchers, Answers stored in db.)
+Database 
+and Tracking activities (Only can be done when Knowledge tests are completed).
+
+verbs:
+Assign (Marine-Biologists assign conservation challenges to whale-watchers)
+Manage (Marine-Biologists manage content of the challenges)
+Submits (Whale-Watchers submit answers to the knowledge tests)
+Check Answers (Test will confirm answers with database)
+Complete tasks (Whale-Watchers complete tasks)
+Award (Challenge will award points to whale-watchers)
+Retake (Whale-Watchers can retake the test or activity if they fail)
+

@@ -1,0 +1,12 @@
+If you ever have the network manager problem, you can do this to fix it
+
+It is most likely true that network manager correctly resolved into 
+
+    /run/NetworkManager/resolv.conf
+
+And booting into recovery mode unlinked that from the /etc/resolv.conf
+so in order to fix this, you can just link it again:
+
+    # Remove the old resolv.conf
+    sudo rm /etc/resolv.conf
+    sudo ln -s /run/NetworkManager/resolv.conf /etc/resolv.conf

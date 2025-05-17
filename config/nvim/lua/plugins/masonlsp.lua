@@ -10,7 +10,6 @@ return {
                 "html",
                 "jdtls",
                 "lua_ls",
-                "prettier",
                 "pylsp",
                 "rust_analyzer",
                 "ts_ls",

@@ -1,0 +1,1 @@
+can be used to **verify whether an application is the actual default handler for a specific file type**

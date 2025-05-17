@@ -1,0 +1,20 @@
+Im making the switch to arch because they literally have everything and im tired of not having anything.
+Like no one cares about openSUSE apparently so im just gonna put anything i can think of here as a bit of
+a checklist for things i need to make sure i do after switching that wouldnt be hinted at in this repo
+
+pyprland
+pix, video player?
+
+downloads rn
+/081 󰉋  SonarScanner/
+/085 󰉋  clipse/
+/086 󰉋  clipse-gui/
+/083 󰉋  fontawesome-free-6.7.2-desktop/
+/090 󰉋  vivid/
+/082 󰈔  DesktopEditors-x86_64.AppImage
+/080 󰈔  Obsidian-1.8.9.AppImage
+/088 󰜡  Palette.svg
+/084 󰈔  Vesktop-1.5.6.AppImage
+/087 󰈔  YouTube-Music-3.8.0.AppImage
+/089 󰗄  vivid-v0.10.1-i686-unknown-linux-musl.tar.gz
+/079 󰈔  zen-x86_64.AppImage
