@@ -4,11 +4,11 @@
         "type": "auto",        // Logo type: auto, builtin, small, file, etc.
         "source": "~/.config/fastfetch/txtfiles/ror2.txt",      // Built-in logo name or file path
         "width": 65,           // Width in characters (for image logos)
-        "height": 35,          // Height in characters (for image logos)
+        "height": 25,          // Height in characters (for image logos)
         "padding": {
             "top": 0,          // Top padding
             "left": 0,         // Left padding
-            "right": 2         // Right padding
+            "right": 0         // Right padding
         },
     },
     "modules": [
@@ -28,7 +28,7 @@
         "cpu",
         "gpu",
         "memory",
-        "disk",
+        // "disk",
         "battery",
         "poweradapter",
     ]

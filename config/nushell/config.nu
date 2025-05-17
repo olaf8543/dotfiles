@@ -17,13 +17,24 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-# Disable welcome banner
-$env.config.show_banner = false
+# PATH configuration
+$env.PATH = ($env.PATH | split row (char esep) | append "~/pypr-env/bin")
+$env.PATH = ($env.PATH | split row (char esep) | append "~/lolcat/bin")
+$env.PATH = ($env.PATH | split row (char esep) | append "/root/.cargo/bin")
+
+# Zoxide integration
+source ~/.config/nushell/zoxide.nu
 
 # Aliases
 alias hamil = kitty +kitten ssh orl6135@hamilton.se.rit.edu
 alias nv = nvim .
 alias gt = lazygit
+alias cd = z
+alias cds = zi
+
+# colors that i use in various locations
+let main = "#fa694e"
+let accent = "#fdf087"
 
 # Custom commands
 def __fzf_helper [
@@ -45,7 +56,11 @@ def snF [] { __fzf_helper "f" "bat --color=always --line-range :500 {}" "nvim" $
 def snf [] { __fzf_helper "f" "bat --color=always --line-range :500 {}" "nvim" "." }
 def snD [] { __fzf_helper "d" "tree -C" "nvim" $env.HOME }
 def snd [] { __fzf_helper "d" "tree -C" "nvim" "." }
-def cds [] { __fzf_helper "d" "tree -C" "cd" $env.HOME }
+def la [path?: string] {
+    let target = if $path != null { $path } else { "." }
+    ls -la ($target) | select name type mode size modified
+}
+
 def fetch [] { fastfetch | lolcat --spread 0.8 }
 
 def code [...args] {
@@ -53,7 +68,7 @@ def code [...args] {
     /usr/bin/code --force-device-scale-factor=1 ...$args
 }
 
-def clear [...args] {
+def clear [] {
     ^clear ; 
     if ($env | columns | any {|col| $col == "TERM_PROGRAM"}) and $env.TERM_PROGRAM == "vscode" {
         # do nothing if in vscode
@@ -62,18 +77,48 @@ def clear [...args] {
     }
 }
 
-# Zoxide integration
-source ~/.config/nushell/zoxide.nu
-alias cd = z
 
-# PATH configuration
-$env.PATH = ($env.PATH | split row (char esep) | append "~/pypr-env/bin")
-$env.PATH = ($env.PATH | split row (char esep) | append "~/lolcat/bin")
 
-# Miscellanious configuration
+$env.config = {
+    show_banner: false
+    edit_mode: vi
+    buffer_editor: "nvim"
+    render_right_prompt_on_last_line: true
+
+    color_config: {
+        separator: $main # this sets only the foreground color like PR #486
+        leading_trailing_space_bg: white # this sets only the foreground color in the original style
+        header: { # this is like PR #489
+            fg: $accent
+        }
+        date: "#75507B"
+        filesize: "#729fcf"
+        row_index: {
+            fg: $accent
+        }
+    }
+}
+
+# For some reason wouldnt let me change these in the config
+$env.config.cursor_shape.vi_insert = "blink_line"
+$env.config.cursor_shape.vi_normal = "block"
+
+$env.PROMPT_INDICATOR_VI_NORMAL = ""
+$env.PROMPT_INDICATOR_VI_INSERT = ""
+
 # General fzf color scheme
-$env.FZF_DEFAULT_OPTS = "--color=fg:#d8dee9,hl:#00ffa7,fg+:#d8dee9,bg+:#2e2e2e,hl+:#00ffa7 --color=info:#00ffa7,prompt:#00ffa7,pointer:#00ffa7,spinner:#00ffa7,header:#5e81ac"
+# $env.FZF_DEFAULT_OPTS = "--color=fg:#d8dee9,hl:#fa694e,fg+:#d8dee9,bg+:#2e2e2e,hl+:#fa694e --color=info:#fa694e,prompt:#fa694e,pointer:#fa694e,spinner:#fa694e,header:#5e81ac"
+# ~/.config/nushell/modules/fzf.nu
+export-env {
+    let fzf_config = {
+        foreground: "#d8dee9"
+        highlight: "#fa694e"
+        background: "#2e2e2e"
+        header: "#5e81ac"
+    }
 
+    $env.FZF_DEFAULT_OPTS = $"--color=fg:($fzf_config.foreground),hl:($fzf_config.highlight),fg+:($fzf_config.foreground),bg+:($fzf_config.background),hl+:($fzf_config.highlight) --color=info:($fzf_config.highlight),prompt:($fzf_config.highlight),pointer:($fzf_config.highlight),spinner:($fzf_config.highlight),header:($fzf_config.header)"
+}
 # Initial fetch
 if ($env | columns | any {|col| $col == "TERM_PROGRAM"}) and $env.TERM_PROGRAM == "vscode" {
 # do nothing if in vscode

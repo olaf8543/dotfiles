@@ -26,18 +26,21 @@ if status is-interactive
     end
 
     alias fetch "fastfetch | lolcat --spread 0.8"
+    alias ^ "command"
     alias snF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
     alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
     alias snD "__fzf_helper d \"tree -C\" \"nvim\" ~"
     alias snd "__fzf_helper d \"tree -C\" \"nvim\" ."
-    alias cds "__fzf_helper d \"tree -C\" \"cd\" ~"
     alias hamil "kitty +kitten ssh orl6135@hamilton.se.rit.edu"
     alias clear "clear && fetch"
     # alias code "ELECTRON_OZONE_PLATFORM=wayland code --force-device-scale-factor=1"
     alias nv "nvim ."
     alias cd "z"
+    alias cds "zi"
     alias gt "lazygit"
-    alias ls "exa"
+    alias ls "eza --icons"
+    alias la "eza -la --icons --group-directories-first --time-style=iso"
+    alias lt "eza -T --icons"
 
     # Abbreviations
 
@@ -45,13 +48,14 @@ if status is-interactive
     #Most of these are done in my zshrc because its my system shell
 
     #python environment, i keep reusing pypr_env just cuz
-    fish_add_path ~/pypr-env/bin
+    fish_add_path ~/py-env/bin
     fish_add_path ~/lolcat/bin
 
     # Miscellanious configuration
     # General fzf color scheme
-    set -gx FZF_DEFAULT_OPTS "--color=fg:#d8dee9,hl:#00ffa7,fg+:#d8dee9,bg+:#2e2e2e,hl+:#00ffa7 \
-        --color=info:#00ffa7,prompt:#00ffa7,pointer:#00ffa7,spinner:#00ffa7,header:#5e81ac"
+    set -gx FZF_DEFAULT_OPTS "--color=fg:#d8dee9,hl:#fa694e,fg+:#d8dee9,bg+:#2e2e2e,hl+:#fa694e \
+        --color=info:#fa694e,prompt:#fa694e,pointer:#fa694e,spinner:#fa694e,header:#5e81ac"
     zoxide init fish | source
+    starship init fish | source
     fetch
 end

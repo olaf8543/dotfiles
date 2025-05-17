@@ -20,7 +20,7 @@ zstyle :compinstall filename '/home/oh/.zshrc'
 # Path Variable 
 export PATH="$PATH:$HOME/Downloads/SonarScanner/bin" #because of 261
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin" # because of custom lolcat
-export PATH="$PATH:~/pypr-env/bin/"
+export PATH="$PATH:~/py-env/bin/"
 export JAVA_HOME=/usr/lib64/jvm/java-21-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 

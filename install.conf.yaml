@@ -2,7 +2,9 @@
 
 - link:
     ~/.profile: profile
+    ~/scripts/: scripts
     ~/.gitconfig: gitconfig
+    ~/.config/starship.toml: starship.toml
     ~/.zshrc: zshrc
     ~/.config/nushell: {
       "path": "config/nushell",

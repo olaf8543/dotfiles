@@ -56,9 +56,6 @@
         "interval": 1
     },
     "hyprland/workspaces": {
-        "persistent-workspaces": {
-            "*": [1, 2, 3, 4, 5],
-        },
     },
     "custom/tray": {
         //just an icon to click to open the "tray" group
