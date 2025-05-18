@@ -1,6 +1,0 @@
-The reason why running that command doesnt work is because the user does not have
-ownership of the vscode directory. so to fix this, just run 
-
-sudo chown -R $USER:$USER /usr/lib64/code
-
-and try again. should work

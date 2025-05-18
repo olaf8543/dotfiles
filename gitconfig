@@ -1,3 +1,7 @@
 [user]
 	name = olaf8543
 	email = 179398174+olaf8543@users.noreply.github.com
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
