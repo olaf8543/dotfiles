@@ -18,9 +18,7 @@
 # them for future reference.
 
 # PATH configuration
-$env.PATH = ($env.PATH | split row (char esep) | append "~/pypr-env/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "~/lolcat/bin")
-$env.PATH = ($env.PATH | split row (char esep) | append "/root/.cargo/bin")
 
 # Zoxide integration
 source ~/.config/nushell/zoxide.nu

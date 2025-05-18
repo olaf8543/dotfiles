@@ -1,3 +1,45 @@
+Just switched to arch and this is nuts
+ill leave other instructions below but on arch this is all you do 
+this would also work for any distro that had lolcat available in their 
+package manager repository
+
+1:  Install lolcat
+        sudo pacman -S lolcat
+
+2:  go to gem which lolcat and instead of lolcat.rb, go to lib/lol.rb 
+    and look for the self rainbow function and edit it like this
+
+    replace the standard self rainbow function with this
+
+  def self.rainbow(freq, i)
+    # Define your start and end colors in RGB
+    start_color = [0xFD, 0xF0, 0x87]
+    end_color   = [0xFA, 0x69, 0x4E]
+
+    # Calculate interpolation factor (0.0 to 1.0)
+    t = (Math.sin(freq * i) + 1) / 2.0  # Maps to 0-1 range
+
+    # Linear interpolation for each RGB component
+    r = (start_color[0] + (end_color[0] - start_color[0]) * t).round
+    g = (start_color[1] + (end_color[1] - start_color[1]) * t).round
+    b = (start_color[2] + (end_color[2] - start_color[2]) * t).round
+
+    "#%02X%02X%02X" % [r, g, b]
+  end
+
+3: edit the ./lib/lolcat/lol.rb file in the self rainbow function like this.
+        find these two lines
+
+            start_color = [0x00, 0xFF, 0x82]    # 00ff82
+            end_color   = [0x00, 0xFF, 0xB3]    # 00ffb3
+
+        change the color in the brackets to match whatever two colors you want.
+        Each element in the array is a color channel, so [0x00, 0xFF, 0x82] is
+        00FF82, becasue 0x(00), 0x(FF), 0x(82). Take each value after the 0x
+        gives you 00FF82. 
+
+it should work completely now
+
 You might notice that nothing is in here but lolcat is used in my shell config and 
 it should be something that you want to install onto the system because it looks so
 sick. I instead decided to opt instead give instructions on how to do this so it is 

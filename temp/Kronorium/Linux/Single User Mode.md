@@ -1,1 +1,0 @@
-This is a special mode that boots you in as a root user to allow you to do system repairs and upgrades or testing. Network access is usually restricted here for security reasons.
