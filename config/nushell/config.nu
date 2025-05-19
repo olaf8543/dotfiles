@@ -29,6 +29,7 @@ alias nv = nvim .
 alias gt = lazygit
 alias cd = z
 alias cds = zi
+alias lt = eza --icons --tree
 
 # colors that i use in various locations
 let main = "#fa694e"
@@ -84,15 +85,11 @@ $env.config = {
     render_right_prompt_on_last_line: true
 
     color_config: {
-        separator: $main # this sets only the foreground color like PR #486
-        leading_trailing_space_bg: white # this sets only the foreground color in the original style
-        header: { # this is like PR #489
-            fg: $accent
+        header: { 
+            fg: $main
         }
-        date: "#75507B"
-        filesize: "#729fcf"
         row_index: {
-            fg: $accent
+            fg: $main
         }
     }
 }
@@ -100,6 +97,7 @@ $env.config = {
 # For some reason wouldnt let me change these in the config
 $env.config.cursor_shape.vi_insert = "blink_line"
 $env.config.cursor_shape.vi_normal = "block"
+$env.LS_COLORS = (vivid generate lava)
 
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PROMPT_INDICATOR_VI_INSERT = ""

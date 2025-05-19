@@ -8,7 +8,6 @@ bindkey -e
 zstyle :compinstall filename '/home/oh/.zshrc'
 
 # Path Variable 
-export PATH="$PATH:$HOME/Downloads/SonarScanner/bin" #because of 261
 export JAVA_HOME=/usr/lib64/jvm/java-21-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
