@@ -1,11 +1,11 @@
 return {
     'nvim-telescope/telescope.nvim',
+    cond = not vim.g.vscode,
     tag = '0.1.8',
     dependencies = {
         'nvim-lua/plenary.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-    cond = not vim.g.vscode,
     config = function()
         require('telescope').load_extension('fzf')
 

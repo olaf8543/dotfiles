@@ -1,5 +1,6 @@
 return {
     "ellisonleao/gruvbox.nvim",
+    cond = not vim.g.vscode,
     config = function()
         require("gruvbox").setup({
             undercurl = true,

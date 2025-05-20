@@ -1,5 +1,6 @@
 return {
     "Shatur/neovim-ayu",
+    cond = not vim.g.vscode,
 
     config = function()
         require('ayu').setup({
