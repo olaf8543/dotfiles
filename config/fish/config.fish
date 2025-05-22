@@ -1,6 +1,10 @@
 if status is-interactive
     set -g fish_greeting
 
+    # colors that i might use in various locations
+    set -l main     "#fa694e"
+    set -l accent   "#fdf087"
+
     # Aliases
     function __fzf_helper
         # Arguments: $argv[1] = fd type (f/d), $argv[2] = preview command, $argv[3] = action command
@@ -31,13 +35,14 @@ if status is-interactive
     alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
     alias snD "__fzf_helper d \"tree -C\" \"nvim\" ~"
     alias snd "__fzf_helper d \"tree -C\" \"nvim\" ."
+    alias cds "__fzf_helper d \"tree -C\" \"z\" ."
     alias hamil "kitty +kitten ssh orl6135@hamilton.se.rit.edu"
     alias clear "clear && fetch"
     # alias code "ELECTRON_OZONE_PLATFORM=wayland code --force-device-scale-factor=1"
     alias nv "nvim ."
-    alias cd "z"
-    alias cds "zi"
     alias gt "lazygit"
+    alias cd "z"
+    alias ci "zi"
     alias ls "eza --icons"
     alias la "eza -la --icons --group-directories-first --time-style=iso"
     alias lt "eza -T --icons"
@@ -53,8 +58,17 @@ if status is-interactive
 
     # Miscellanious configuration
     # General fzf color scheme
-    set -gx FZF_DEFAULT_OPTS "--color=fg:#d8dee9,hl:#fa694e,fg+:#d8dee9,bg+:#2e2e2e,hl+:#fa694e \
-        --color=info:#fa694e,prompt:#fa694e,pointer:#fa694e,spinner:#fa694e,header:#5e81ac"
+    set -l fzf_fg      "#d8dee9"
+    set -l fzf_bg      "#2e2e2e"
+    set -l fzf_header  "#5e81ac"
+
+    set -gx FZF_DEFAULT_OPTS \
+        "--color=fg:$fzf_fg,hl:$main,fg+:$fzf_fg,bg+:$fzf_bg,hl+:$main" \
+        "--color=info:$main,prompt:$main,pointer:$main,spinner:$main,header:$fzf_header"
+    
+    export LS_COLORS=$(vivid generate lava)
+    # set -gx FZF_DEFAULT_OPTS "--color=fg:#d8dee9,hl:#fa694e,fg+:#d8dee9,bg+:#2e2e2e,hl+:#fa694e \
+        #     --color=info:#fa694e,prompt:#fa694e,pointer:#fa694e,spinner:#fa694e,header:#5e81ac"
     zoxide init fish | source
     starship init fish | source
     fetch
