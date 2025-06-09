@@ -108,7 +108,7 @@ $env.PROMPT_INDICATOR_VI_INSERT = ""
 export-env {
     let fzf_config = {
         foreground: "#d8dee9"
-        highlight: "#fa694e"
+        highlight: $main
         background: "#2e2e2e"
         header: "#5e81ac"
     }

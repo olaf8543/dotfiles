@@ -93,9 +93,9 @@ symbol = ' '
 format = """$symbol """
 success_symbol = "[◎](bold italic #fa694e)"
 error_symbol = "[○](italic #fa694e)"
-vimcmd_symbol = "[■](italic dimmed green)"
+vimcmd_symbol = "[◌](bold #fa694e)"
 vimcmd_replace_one_symbol = "[◌](bold #fdf087)"
-vimcmd_visual_symbol = "[▼](bold #fa694e)"
+vimcmd_visual_symbol = "[◇](bold #fa694e)"
 
 [env_var.VIMSHELL]
 format = "[$env_value]($style)"

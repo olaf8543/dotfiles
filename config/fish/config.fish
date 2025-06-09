@@ -2,8 +2,8 @@ if status is-interactive
     set -g fish_greeting
 
     # colors that i might use in various locations
-    set -l main     "#fa694e"
-    set -l accent   "#fdf087"
+    set -l main "#fa694e"
+    set -l accent "#fdf087"
 
     # Aliases
     function __fzf_helper
@@ -24,25 +24,32 @@ if status is-interactive
         end
     end
 
+    function _conditional_fetch
+        if not set -q TERM_PROGRAM || test "$TERM_PROGRAM" != vscode
+            fetch
+        end
+    end
+
     function code
         set -lx ELECTRON_OZONE_PLATFORM wayland
         /usr/bin/code --force-device-scale-factor=1 $argv
     end
 
+    fish_vi_key_bindings
+
     alias fetch "fastfetch | lolcat --spread 0.8"
-    alias ^ "command"
+    alias ^ command
     alias snF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
     alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
     alias snD "__fzf_helper d \"tree -C\" \"nvim\" ~"
     alias snd "__fzf_helper d \"tree -C\" \"nvim\" ."
-    alias cds "__fzf_helper d \"tree -C\" \"z\" ."
+    alias cds "__fzf_helper d \"tree -C\" \"z\" ~"
     alias hamil "kitty +kitten ssh orl6135@hamilton.se.rit.edu"
-    alias clear "clear && fetch"
+    alias clear "command clear && _conditional_fetch"
     # alias code "ELECTRON_OZONE_PLATFORM=wayland code --force-device-scale-factor=1"
-    alias nv "nvim ."
-    alias gt "lazygit"
-    alias cd "z"
-    alias ci "zi"
+    alias gt lazygit
+    alias cd z
+    alias ci zi
     alias ls "eza --icons"
     alias la "eza -la --icons --group-directories-first --time-style=iso"
     alias lt "eza -T --icons"
@@ -58,18 +65,18 @@ if status is-interactive
 
     # Miscellanious configuration
     # General fzf color scheme
-    set -l fzf_fg      "#d8dee9"
-    set -l fzf_bg      "#2e2e2e"
-    set -l fzf_header  "#5e81ac"
+    set -l fzf_fg "#d8dee9"
+    set -l fzf_bg "#2e2e2e"
+    set -l fzf_header "#5e81ac"
 
     set -gx FZF_DEFAULT_OPTS \
         "--color=fg:$fzf_fg,hl:$main,fg+:$fzf_fg,bg+:$fzf_bg,hl+:$main" \
         "--color=info:$main,prompt:$main,pointer:$main,spinner:$main,header:$fzf_header"
-    
+
     export LS_COLORS=$(vivid generate lava)
     # set -gx FZF_DEFAULT_OPTS "--color=fg:#d8dee9,hl:#fa694e,fg+:#d8dee9,bg+:#2e2e2e,hl+:#fa694e \
-        #     --color=info:#fa694e,prompt:#fa694e,pointer:#fa694e,spinner:#fa694e,header:#5e81ac"
+    #     --color=info:#fa694e,prompt:#fa694e,pointer:#fa694e,spinner:#fa694e,header:#5e81ac"
     zoxide init fish | source
     starship init fish | source
-    fetch
+    _conditional_fetch
 end

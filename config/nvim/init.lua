@@ -1,9 +1,2 @@
-if vim.g.vscode then
-    require("vsoptions")
-else
-    require("options")
-    require("keymaps")
-end
-
--- setup lazy plugin manager
+-- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
