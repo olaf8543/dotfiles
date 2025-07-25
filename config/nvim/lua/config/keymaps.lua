@@ -1,7 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-vim.keymap.set("n", "<leader>ah", "<cmd>nohl<CR>", { desc = "Clear search highlights" })
 
 -- thanks primagen for these
 vim.keymap.set("v", "K", "<cmd>m '<-2<CR>gv=gv", { desc = "Move visual selection up" })
@@ -26,8 +25,13 @@ vim.keymap.set(
     { desc = "Replace current word in entire file" }
 )
 
--- My own leader keybindings
+vim.keymap.set("n", "gca", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs><esc>kJA", { desc = "Add Comment At End Of Line" })
 
--- commenting
-vim.keymap.set("n", "<BS>co", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" })
-vim.keymap.set("n", "<BS>cO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
+-- because my opacity can never work properly huh
+vim.keymap.set("n", "<leader>uod", function()
+    vim.fn.system("kitty @ set-background-opacity 0.7")
+end, { desc = "Darken Opacity" })
+
+vim.keymap.set("n", "<leader>uol", function()
+    vim.fn.system("kitty @ set-background-opacity 0.5")
+end, { desc = "Lighten Opacity" })

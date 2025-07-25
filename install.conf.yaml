@@ -5,11 +5,11 @@
     ~/.gitconfig: gitconfig
     ~/.config/starship.toml: starship.toml
     ~/.zshrc: zshrc
-    ~/.config/nushell: { "path": "config/nushell", "force": true }
     ~/.config/fish: config/fish/
     ~/.config/hypr: config/hypr/
+    ~/.config/tmux: config/tmux/
+    ~/.config/rofi: config/rofi/
     ~/.config/waybar: config/waybar/
-    ~/.config/fuzzel: config/fuzzel/
     ~/.config/fastfetch: config/fastfetch/
     ~/.config/nvim: config/nvim/
     ~/.config/dunst: config/dunst/

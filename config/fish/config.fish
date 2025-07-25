@@ -2,8 +2,8 @@ if status is-interactive
     set -g fish_greeting
 
     # colors that i might use in various locations
-    set -l main "#fa694e"
-    set -l accent "#fdf087"
+    set -l main "#00ffa7"
+    set -l accent "#00ff82"
 
     # Aliases
     function __fzf_helper
@@ -25,8 +25,10 @@ if status is-interactive
     end
 
     function _conditional_fetch
-        if not set -q TERM_PROGRAM || test "$TERM_PROGRAM" != vscode
-            fetch
+        if not set -q TMUX
+            if not set -q TERM_PROGRAM || test "$TERM_PROGRAM" != vscode
+                fetch
+            end
         end
     end
 
@@ -46,8 +48,6 @@ if status is-interactive
     alias cds "__fzf_helper d \"tree -C\" \"z\" ~"
     alias hamil "kitty +kitten ssh orl6135@hamilton.se.rit.edu"
     alias clear "command clear && _conditional_fetch"
-    # alias code "ELECTRON_OZONE_PLATFORM=wayland code --force-device-scale-factor=1"
-    alias gt lazygit
     alias cd z
     alias ci zi
     alias ls "eza --icons"
@@ -64,6 +64,7 @@ if status is-interactive
     fish_add_path ~/lolcat/bin
 
     # Miscellanious configuration
+
     # General fzf color scheme
     set -l fzf_fg "#d8dee9"
     set -l fzf_bg "#2e2e2e"
@@ -73,9 +74,7 @@ if status is-interactive
         "--color=fg:$fzf_fg,hl:$main,fg+:$fzf_fg,bg+:$fzf_bg,hl+:$main" \
         "--color=info:$main,prompt:$main,pointer:$main,spinner:$main,header:$fzf_header"
 
-    export LS_COLORS=$(vivid generate lava)
-    # set -gx FZF_DEFAULT_OPTS "--color=fg:#d8dee9,hl:#fa694e,fg+:#d8dee9,bg+:#2e2e2e,hl+:#fa694e \
-    #     --color=info:#fa694e,prompt:#fa694e,pointer:#fa694e,spinner:#fa694e,header:#5e81ac"
+    export LS_COLORS=$(vivid generate tokyonight-night)
     zoxide init fish | source
     starship init fish | source
     _conditional_fetch

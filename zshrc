@@ -30,4 +30,4 @@ compinit
 # End of lines added by compinstall
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)

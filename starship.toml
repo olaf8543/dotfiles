@@ -91,11 +91,11 @@ symbol = ' '
 
 [character]
 format = """$symbol """
-success_symbol = "[◎](bold italic #fa694e)"
-error_symbol = "[○](italic #fa694e)"
-vimcmd_symbol = "[◌](bold #fa694e)"
-vimcmd_replace_one_symbol = "[◌](bold #fdf087)"
-vimcmd_visual_symbol = "[◇](bold #fa694e)"
+success_symbol = "[◎](bold italic #00ffa7)"
+error_symbol = "[○](italic #00ffa7)"
+vimcmd_symbol = "[◌](bold #00ffa7)"
+vimcmd_replace_one_symbol = "[◌](bold #00ffb3)"
+vimcmd_visual_symbol = "[◇](bold #00ffa7)"
 
 [env_var.VIMSHELL]
 format = "[$env_value]($style)"
@@ -103,13 +103,13 @@ style = 'green italic'
 
 [sudo]
 format = "[$symbol]($style)"
-style = "bold italic #fa694e"
+style = "bold italic #00ffa7"
 symbol = "⋈┈"
 disabled = false
 
 [username]
-style_user = "#fa694e bold italic"
-style_root = "#fa694e bold italic"
+style_user = "#00ffa7 bold italic"
+style_root = "#00ffa7 bold italic"
 format = "[⭘ $user]($style) "
 disabled = false
 show_always = false
@@ -120,10 +120,10 @@ truncation_length = 2
 truncation_symbol = "□ "
 read_only = " ◈"
 use_os_path_sep = true
-style = "italic #fdf087"
+style = "italic #00ffb3"
 format = '[$path]($style)[$read_only]($read_only_style)'
-repo_root_style = 'bold #fdf087'
-repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [△](bold bright-#fdf087)'
+repo_root_style = 'bold #00ffb3'
+repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [△](bold bright-#00ffb3)'
 
 [cmd_duration]
 format = "[◄ $duration ](italic white)"
@@ -131,7 +131,7 @@ format = "[◄ $duration ](italic white)"
 [jobs]
 format = "[$symbol$number]($style) "
 style = "white"
-symbol = "[▶](#fdf087 italic)"
+symbol = "[▶](#00ffb3 italic)"
 
 [localip]
 ssh_only = true
@@ -159,7 +159,7 @@ style = "italic bold red"
 
 [[battery.display]]
 threshold = 60
-style = "italic dimmed #fa694e"
+style = "italic dimmed #00ffa7"
 
 [[battery.display]]
 threshold = 70
@@ -167,8 +167,8 @@ style = "italic dimmed yellow"
 
 [git_branch]
 format = " [$branch(:$remote_branch)]($style)"
-symbol = "[△](bold italic bright-#fdf087)"
-style = "italic bright-#fdf087"
+symbol = "[△](bold italic bright-#00ffb3)"
+style = "italic bright-#00ffb3"
 truncation_symbol = "⋯"
 truncation_length = 11
 ignore_branches = ["main", "master"]
@@ -182,17 +182,17 @@ ignore_submodules = true
 disabled = false
 
 [git_status]
-style = "bold italic bright-#fdf087"
+style = "bold italic bright-#00ffb3"
 format = "([⎪$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed⎥]($style))"
 conflicted = "[◪◦](italic bright-magenta)"
 ahead = "[▴│[${count}](bold white)│](italic green)"
 behind = "[▿│[${count}](bold white)│](italic red)"
 diverged = "[◇ ▴┤[${ahead_count}](regular white)│▿┤[${behind_count}](regular white)│](italic bright-magenta)"
-untracked = "[◌◦](italic #fa694e)"
+untracked = "[◌◦](italic #00ffa7)"
 stashed = "[◃◈](italic white)"
 modified = "[●◦](italic yellow)"
 staged = "[▪┤[$count](bold white)│](italic bright-cyan)"
-renamed = "[◎◦](italic bright-#fdf087)"
+renamed = "[◎◦](italic bright-#00ffb3)"
 deleted = "[✕](italic red)"
 
 [deno]
@@ -203,7 +203,7 @@ version_format = "${raw}"
 format = " [lua](italic) [${symbol}${version}]($style)"
 version_format = "${raw}"
 symbol = "⨀ "
-style = "bold #fa694e"
+style = "bold #00ffa7"
 
 [nodejs]
 format = " [node](italic) [◫ ($version)](bold bright-green)"
@@ -214,9 +214,9 @@ detect_extensions = []
 
 [python]
 format = " [py](italic) [${symbol}${version}]($style)"
-symbol = "[⌉](bold bright-#fdf087)⌊ "
+symbol = "[⌉](bold bright-#00ffb3)⌊ "
 version_format = "${raw}"
-style = "bold #fa694e"
+style = "bold #00ffa7"
 
 [ruby]
 format = " [rb](italic) [${symbol}${version}]($style)"
@@ -245,7 +245,7 @@ version_format = "${raw}"
 [aws]
 disabled = true
 format = " [aws](italic) [$symbol $profile $region]($style)"
-style = "bold #fdf087"
+style = "bold #00ffb3"
 symbol = "▲ "
 
 [buf]
@@ -301,7 +301,7 @@ symbol = "▴▲▴ "
 format = " nim [$symbol($version )]($style)"
 
 [nix_shell]
-style = 'bold italic dimmed #fdf087'
+style = 'bold italic dimmed #00ffb3'
 symbol = '✶'
 format = '[$symbol nix⎪$state⎪]($style) [$name](italic dimmed white)'
 impure_msg = '[⌽](bold dimmed red)'

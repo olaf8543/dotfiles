@@ -8,12 +8,21 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 -- Not an autocmd but i want to run it on startup
-vim.fn.system("kitty @ set-background-opacity 0.7")
+-- vim.fn.system("kitty @ set-background-opacity 0.7")
 
-vim.api.nvim_create_autocmd("VimLeave", {
-    callback = function()
-        pcall(function()
-            vim.fn.system("kitty @ set-background-opacity 0.5")
-        end)
-    end,
-})
+-- vim.api.nvim_create_autocmd("VimLeave", {
+--     callback = function()
+--         pcall(function()
+--             vim.fn.system("kitty @ set-background-opacity 0.5")
+--         end)
+--     end,
+-- })
+-- vim.api.nvim_create_autocmd("VimLeave", {
+--     callback = function()
+--         if not os.getenv("TMUX") then
+--             pcall(function()
+--                 vim.fn.system("kitty @ set-background-opacity 0.5")
+--             end)
+--         end
+--     end,
+-- })

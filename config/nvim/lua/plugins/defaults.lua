@@ -3,7 +3,7 @@ return {
         "LazyVim/LazyVim",
         opts = {
             ---@type string|fun()
-            colorscheme = "gruvbox",
+            colorscheme = "tokyonight-night",
             -- load the default settings
             defaults = {
                 autocmds = true, -- lazyvim.config.autocmds
