@@ -37,10 +37,32 @@ if status is-interactive
         /usr/bin/code --force-device-scale-factor=1 $argv
     end
 
+    # Compiles and runs a c file, compiles to a file of the same name of the c file
+    # Eg. something.c -> something
+    function gcrun
+        argparse v/valgrind -- $argv
+        set -l file $argv[1]
+        or return
+        # Remove the file type from the file path
+        set -l output (string replace -r '\.([^./]+)$' '' -- $file)
+
+        if test -e $file && test -n "$output"
+            gcc -g -Wall -o $output $file
+            if test $status = 0
+                if set -q _flag_v
+                    valgrind --leak-check=full $output --debug
+                else
+                    eval $output
+                end
+            end
+        else
+            echo "File does not exist"
+        end
+    end
+
     fish_vi_key_bindings
 
     alias fetch "fastfetch | lolcat --spread 0.8"
-    alias ^ command
     alias snF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
     alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
     alias snD "__fzf_helper d \"tree -C\" \"nvim\" ~"
@@ -58,10 +80,7 @@ if status is-interactive
 
     #PATH variables
     #Most of these are done in my zshrc because its my system shell
-
-    #python environment, i keep reusing pypr_env just cuz
-    fish_add_path ~/py-env/bin
-    fish_add_path ~/lolcat/bin
+    export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
     # Miscellanious configuration
 
