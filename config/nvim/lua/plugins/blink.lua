@@ -13,6 +13,7 @@ return {
             use_nvim_cmp_as_default = false,
             -- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
             -- adjusts spacing to ensure icons are aligned
+
             nerd_font_variant = "mono",
         },
         completion = {
@@ -23,6 +24,7 @@ return {
                 },
             },
             menu = {
+                auto_show = false,
                 draw = {
                     treesitter = { "lsp" },
                 },
@@ -32,7 +34,7 @@ return {
                 auto_show_delay_ms = 200,
             },
             ghost_text = {
-                enabled = vim.g.ai_cmp,
+                enabled = false,
             },
         },
 
@@ -52,9 +54,14 @@ return {
 
         keymap = {
             preset = "default",
-            ["<C-y>"] = { "select_and_accept" },
-            ["<C-l>"] = { "snippet_forward", "fallback" },
-            ["<C-h>"] = { "snippet_backward", "fallback" },
+            -- ["<C-y>"] = { "select_and_accept" },
+            -- ["<C-l>"] = { "snippet_forward", "fallback" },
+            -- ["<C-h>"] = { "snippet_backward", "fallback" },
+            -- ["<C-space>"] = {
+            --     function(cmp)
+            --         cmp.show()
+            --     end,
+            -- },
         },
     },
 }
