@@ -3,9 +3,6 @@
 -- Add any additional keymaps here
 
 -- thanks primagen for these
-vim.keymap.set("v", "K", "<cmd>m '<-2<CR>gv=gv", { desc = "Move visual selection up" })
-vim.keymap.set("v", "J", "<cmd>m '>+1<CR>gv=gv", { desc = "Move visual selection down" })
-
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines (keep cursor position)" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down (center cursor)" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up (center cursor)" })
@@ -25,13 +22,9 @@ vim.keymap.set(
     { desc = "Replace current word in entire file" }
 )
 
-vim.keymap.set("n", "gca", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs><esc>kJA", { desc = "Add Comment At End Of Line" })
+vim.keymap.set("n", "gce", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs><esc>kJA", { desc = "Add Comment At End Of Line" })
 
--- because my opacity can never work properly huh
-vim.keymap.set("n", "<leader>uod", function()
-    vim.fn.system("kitty @ set-background-opacity 0.7")
-end, { desc = "Darken Opacity" })
-
-vim.keymap.set("n", "<leader>uol", function()
-    vim.fn.system("kitty @ set-background-opacity 0.5")
-end, { desc = "Lighten Opacity" })
+-- Check if launched from Kitty scrollback
+if vim.g.kitty_scrollback == 1 then
+    vim.keymap.set("n", "<M-q>", "<cmd>q!<CR>", { desc = "Quit file" })
+end
