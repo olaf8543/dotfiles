@@ -1,0 +1,7 @@
+return {
+    "oxfist/night-owl.nvim",
+    lazy = true,
+    opts = {
+        transparent_background = true,
+    },
+}
