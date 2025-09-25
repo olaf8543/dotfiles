@@ -2,6 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
 -- thanks primagen for these
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines (keep cursor position)" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down (center cursor)" })

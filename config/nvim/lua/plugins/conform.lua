@@ -13,6 +13,8 @@ return {
             sh = { "shfmt" },
             c = { "clang_format" },
             cpp = { "clang_format" },
+            sql = { "sqlfluff" },
+            py = { "black" },
         },
         -- The options you set here will be merged with the builtin formatters.
         -- You can also define any custom formatters here.

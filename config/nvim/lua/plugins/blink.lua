@@ -24,7 +24,7 @@ return {
                 },
             },
             menu = {
-                auto_show = false,
+                auto_show = true, -- Falso if i wanna be that guy
                 draw = {
                     treesitter = { "lsp" },
                 },
