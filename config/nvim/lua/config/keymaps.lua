@@ -3,6 +3,8 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "<C-;>", "<Esc>A;<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "<C-CR>", "<Esc>A;<CR>", { desc = "Exit insert mode" })
 -- thanks primagen for these
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines (keep cursor position)" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down (center cursor)" })
