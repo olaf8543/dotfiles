@@ -89,6 +89,7 @@ if status is-interactive
     alias ls "eza --icons"
     alias la "eza -la --icons --group-directories-first --time-style=iso"
     alias lt "eza -T --icons"
+    alias lg lazygit
 
     # Abbreviations
 
