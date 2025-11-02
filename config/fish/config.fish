@@ -24,6 +24,16 @@ if status is-interactive
         end
     end
 
+    # Yazi wrapper function, allows me to cd with yazi when i want
+    function e
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
+    end
+
     function _conditional_fetch
         if not set -q TMUX
             if not set -q TERM_PROGRAM || test "$TERM_PROGRAM" != vscode
@@ -77,25 +87,28 @@ if status is-interactive
     fish_vi_key_bindings
 
     alias fetch "fastfetch | lolcat --spread 0.8"
-    alias snF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
-    alias snf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
-    alias snD "__fzf_helper d \"tree -C\" \"nvim\" ~"
-    alias snd "__fzf_helper d \"tree -C\" \"nvim\" ."
-    alias cds "__fzf_helper d \"tree -C\" \"z\" ~"
-    alias hamil "kitty +kitten ssh orl6135@hamilton.se.rit.edu"
-    alias clear "command clear && _conditional_fetch"
+    alias sF "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ~"
+    alias sf "__fzf_helper f \"bat --color=always --line-range :500 {}\" \"nvim\" ."
+    alias sE "__fzf_helper d \"tree -C\" \"yazi\" ~"
+    alias se "__fzf_helper d \"tree -C\" \"yazi\" ."
     alias cd z
-    alias ci zi
+    alias cds zi
+    alias cdS "__fzf_helper d \"tree -C\" \"z\" ~"
+    alias cdh "__fzf_helper d \"tree -C\" \"z\" ."
+    alias hamil "wezterm ssh hamilton.se.rit.edu"
+    alias clear "command clear && _conditional_fetch"
     alias ls "eza --icons"
     alias la "eza -la --icons --group-directories-first --time-style=iso"
     alias lt "eza -T --icons"
-    alias lg lazygit
+    alias lg lazygit # lazy ahh mf
 
     # Abbreviations
 
     #PATH variables
     #Most of these are done in my zshrc because its my system shell
     export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+    fish_add_path ~/scripts/
+    fish_add_path ~/.dotfiles/scripts/
 
     # Miscellanious configuration
 
@@ -109,6 +122,7 @@ if status is-interactive
         "--color=info:$main,prompt:$main,pointer:$main,spinner:$main,header:$fzf_header"
 
     export LS_COLORS=$(vivid generate tokyonight-night)
+    export EDITOR="nvim"
     zoxide init fish | source
     starship init fish | source
     _conditional_fetch
