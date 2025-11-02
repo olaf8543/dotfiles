@@ -1,0 +1,18 @@
+[opener]
+pix = [{ run = 'pix "$@"', orphan = true, desc = "Pix image viewer" }]
+
+zathura = [
+    { run = 'zathura "$@"', orphan = true, desc = "Zathura Document viewer" },
+]
+
+vscode = [
+    { run = 'code "$@"', block = false, orphan = true, desc = "Vscode editor" },
+]
+
+[open]
+prepend_rules = [
+    { mime = "image/*", use = "pix" },
+
+    { mime = "application/pdf", use = "zathura" },
+    { name = "*.mmd", use = "vscode" },
+]

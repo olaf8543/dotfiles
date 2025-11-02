@@ -1,0 +1,62 @@
+# ~/.config/yazi/flavors/moonfly.yazi/flavor.toml or ~/.config/yazi/theme.toml
+
+# General colors
+[colors]
+bg = "#080808"
+fg = "#bdbdbd"
+bold = "#eeeeee"
+cursor = "#9e9e9e"
+
+# Manager (file list) styles
+[mgr]
+# Default file style
+item = { fg = "#bdbdbd" }
+# Hovered file style
+hovered = { fg = "#eeeeee", bg = "#262626", bold = true }
+# Selected file style
+selected = { fg = "#eeeeee", bg = "#3a3a3a", bold = true }
+# Current working directory path style
+cwd = { fg = "#74b2ff", bold = true } # Example color for path, often blueish
+
+# Status line styles
+[status]
+# Default status line style
+main = { fg = "#bdbdbd", bg = "#080808" }
+# Mode indicator (e.g., "NORMAL", "VISUAL")
+mode = { fg = "#080808", bg = "#74b2ff", bold = true } # Example: blue background for mode
+# Progress bar
+progress = { fg = "#74b2ff", bg = "#262626" }
+
+# Header styles
+[header]
+# Default header style
+main = { fg = "#bdbdbd", bg = "#080808" }
+
+# Border styles
+[border]
+# Default border style
+main = { fg = "#444444" } # A darker gray for borders
+
+# Input styles (e.g., for search or command input)
+[input]
+# Input text style
+prompt = { fg = "#74b2ff" }
+value = { fg = "#bdbdbd" }
+
+# Tab styles
+[tab]
+# Active tab
+active = { fg = "#eeeeee", bg = "#262626" }
+# Inactive tab
+inactive = { fg = "#bdbdbd", bg = "#080808" }
+
+# Icon styles (example, you might need to define specific icons)
+[icon]
+# Default icon color
+fg = "#74b2ff" # Example: blueish for icons
+
+# You can define specific icon rules here, e.g.:
+# [icon.rules]
+# dir = { text = " folder", fg = "#74b2ff" }
+# file = { text = "📄", fg = "#bdbdbd" }
+# executable = { text = " executable", fg = "#aaff87" } # Example green for executables
