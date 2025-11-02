@@ -17,7 +17,6 @@
         "custom/notifications",
         "custom/powericon",
     ],
-
     "cpu": {
         "format": "",
         "on-click": "kitty btop",
@@ -39,9 +38,15 @@
         "tooltip": false
     },
     "battery": {
-        "format": "{icon}",
+        "format": "{capacity}% {icon}",
         "format-charging": "󱐋",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
         "tooltip-format": "{capacity}% {time}",
         "interval": 1,
         "on-update": "~/.config/waybar/scripts/battery-check.sh"
@@ -55,8 +60,7 @@
         "tooltip-format": "Memory: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)",
         "interval": 1
     },
-    "hyprland/workspaces": {
-    },
+    "hyprland/workspaces": {},
     "custom/tray": {
         //just an icon to click to open the "tray" group
         "format": "",
