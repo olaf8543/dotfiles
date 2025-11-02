@@ -10,6 +10,7 @@ zstyle :compinstall filename '/home/oh/.zshrc'
 # Path Variable 
 export JAVA_HOME=/usr/lib64/jvm/java-21-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
+export EDITOR="nvim"
 
 # Aliases
 
@@ -31,3 +32,9 @@ compinit
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/oh/.dart-cli-completion/zsh-config.zsh ]] && . /home/oh/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
