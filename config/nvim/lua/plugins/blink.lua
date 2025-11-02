@@ -54,6 +54,7 @@ return {
 
         keymap = {
             preset = "default",
+            ["<C-f>"] = { "select_and_accept" },
             -- ["<C-y>"] = { "select_and_accept" },
             -- ["<C-l>"] = { "snippet_forward", "fallback" },
             -- ["<C-h>"] = { "snippet_backward", "fallback" },

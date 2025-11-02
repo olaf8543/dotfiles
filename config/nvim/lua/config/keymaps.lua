@@ -3,8 +3,8 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
-vim.keymap.set("i", "<C-;>", "<Esc>A;<Esc>", { desc = "Exit insert mode" })
-vim.keymap.set("i", "<C-CR>", "<Esc>A;<CR>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "<C-a>", "<Esc>A;<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "<C-j>", "<Esc>A;<CR>", { desc = "Exit insert mode" })
 -- thanks primagen for these
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines (keep cursor position)" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down (center cursor)" })
@@ -13,7 +13,7 @@ vim.keymap.set("n", "n", "nzzzv", { desc = "Next match (center cursor)" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous match (center cursor)" })
 
 -- greatest remaps ever
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without yanking deleted text" })
+-- vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without yanking deleted text" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "Disable Ex mode" })

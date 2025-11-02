@@ -37,11 +37,13 @@ return {
             enabled = false,
         },
         -- add any global capabilities here
-        capabilities = {
-            workspace = {
-                fileOperations = {
-                    didRename = true,
-                    willRename = true,
+        servers = {
+            capabilities = {
+                workspace = {
+                    fileOperations = {
+                        didRename = true,
+                        willRename = true,
+                    },
                 },
             },
         },
