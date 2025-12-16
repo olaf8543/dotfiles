@@ -88,6 +88,24 @@ return {
                     },
                 },
             },
+            vtsls = {
+                settings = {
+                    typescript = {
+                        format = {
+                            tabSize = 4,
+                            indentSize = 4,
+                            convertTabsToSpaces = true,
+                        },
+                    },
+                    javascript = {
+                        format = {
+                            tabSize = 4,
+                            indentSize = 4,
+                            convertTabsToSpaces = true,
+                        },
+                    },
+                },
+            },
             ruff = {
                 enabled = false,
             },

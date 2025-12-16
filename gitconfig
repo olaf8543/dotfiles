@@ -5,3 +5,15 @@
 	defaultBranch = main
 [fetch]
 	prune = true
+
+; ignore files globally
+[core]
+	excludesfile = /home/oh/.gitignore_global
+
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[mergetool "nvimdiff"]
+	layout = LOCAL,BASE,REMOTE / MERGED

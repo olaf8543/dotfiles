@@ -15,6 +15,10 @@ return {
             cpp = { "clang_format" },
             sql = { "sqlfluff" },
             py = { "black" },
+            -- js = { "prettier" },
+            -- jsx = { "prettier" },
+            -- ts = { "prettier" },
+            -- tsx = { "prettier" },
         },
         -- The options you set here will be merged with the builtin formatters.
         -- You can also define any custom formatters here.

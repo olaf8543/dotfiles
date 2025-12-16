@@ -108,6 +108,7 @@ if status is-interactive
     #Most of these are done in my zshrc because its my system shell
     export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
     fish_add_path ~/scripts/
+    fish_add_path ~/pyvenv/bin/
     fish_add_path ~/.dotfiles/scripts/
 
     # Miscellanious configuration
