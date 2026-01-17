@@ -15,7 +15,6 @@ export EDITOR="nvim"
 # Aliases
 
 alias fetch="paste -d ' ' <(cat ~/.config/neofetch/txtfiles/ror2.txt) <(neofetch) | lolcat --spread 0.8"
-alias hamil='kitty +kitten ssh orl6135@hamilton.se.rit.edu'
 alias clearf="clear && fetch"
 alias lg="lazygit"
 
