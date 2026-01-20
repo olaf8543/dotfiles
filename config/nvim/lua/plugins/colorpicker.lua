@@ -1,11 +1,11 @@
 return {
-    "uga-rosa/ccc.nvim",
-    keys = {
-        { "<C-c>", "<cmd>CccPick<cr>", mode = { "n", "i" }, desc = "Open Color Picker" },
-    },
-    config = function()
-        require("ccc").setup()
-    end,
+  "uga-rosa/ccc.nvim",
+  keys = {
+    { "<C-c>", "<cmd>CccPick<cr>", mode = { "n", "i" }, desc = "Open Color Picker" },
+  },
+  config = function()
+    require("ccc").setup()
+  end,
 }
 -- mappings = {
 --   ["<CR>"] = mapping.complete,

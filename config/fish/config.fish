@@ -95,12 +95,11 @@ if status is-interactive
     alias cds zi
     alias cdS "__fzf_helper d \"tree -C\" \"z\" ~"
     alias cdh "__fzf_helper d \"tree -C\" \"z\" ."
-    alias hamil "wezterm ssh hamilton.se.rit.edu"
     alias clear "command clear && _conditional_fetch"
     alias ls "eza --icons"
     alias la "eza -la --icons --group-directories-first --time-style=iso"
     alias lt "eza -T --icons"
-    alias lg lazygit # lazy ahh mf
+    alias gg lazygit # lazy ahh mf
 
     # Abbreviations
 
