@@ -1,0 +1,30 @@
+general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal = { family = "FiraCode Nerd Font" }
+bold = { family = "FiraCode Nerd Font" }
+italic = { family = "FiraCode Nerd Font" }
+size = 11
+
+[window]
+padding.x = 10
+padding.y = 10
+# padding.bot = 0
+decorations = "None"
+
+[keyboard]
+bindings = [
+{ key = "Insert", mods = "Shift", action = "Paste" },
+{ key = "Insert", mods = "Control", action = "Copy" },
+{ key= "Space", mods= "Alt", action= "ToggleViMode" },
+{ key= "Q", mode= "Vi|~Search", action= "ToggleViMode" },
+{ key= "Y", mode= "Vi|~Search", action= "Copy" },
+{ key= "Y", mode= "Vi|~Search", action= "ClearSelection" },
+{ key= "Y", mode= "Vi|~Search", action= "ToggleViMode" }
+]
+
+[terminal.shell]
+program = "/usr/bin/fish"

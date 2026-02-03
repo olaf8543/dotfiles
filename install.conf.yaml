@@ -1,21 +1,14 @@
 - clean: ["~"]
 
 - link:
-    ~/.profile: profile
     ~/.gitconfig: gitconfig
     ~/.config/starship.toml: starship.toml
-    ~/.zshrc: zshrc
     ~/.config/fish: config/fish/
     ~/.config/hypr: config/hypr/
-    ~/.config/tmux: config/tmux/
-    ~/.config/rofi: config/rofi/
+    ~/.config/alacritty: config/alacritty/
+    ~/.config/omarchy: config/omarchy/
     ~/.config/waybar: config/waybar/
     ~/.config/fastfetch: config/fastfetch/
     ~/.config/nvim: config/nvim/
-    ~/.config/dunst: config/dunst/
-    ~/.config/kitty: config/kitty/
-    ~/.config/bat: config/bat/
-    ~/.config/wezterm: config/wezterm/
     ~/.config/yazi: config/yazi/
-    ~/.config/lazygit: config/lazygit/
     ~/.config/kanata.kbd: config/kanata.kbd
