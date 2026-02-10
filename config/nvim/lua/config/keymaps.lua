@@ -30,7 +30,8 @@ vim.keymap.set(
 
 vim.keymap.set("n", "gce", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs><esc>kJA", { desc = "Add Comment At End Of Line" })
 
--- Check if launched from Kitty scrollback
-if vim.g.kitty_scrollback == 1 then
-    vim.keymap.set("n", "<M-q>", "<cmd>q!<CR>", { desc = "Quit file" })
-end
+vim.keymap.del("n", "<leader>l")
+vim.keymap.set("n", "<leader>ll", ":Lazy<CR>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>lg", function() Snacks.lazygit({ cwd = LazyVim.root.git() }) end,
+    { desc = "Lazygit (Root Dir)" })
+vim.keymap.set("n", "<leader>lG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
