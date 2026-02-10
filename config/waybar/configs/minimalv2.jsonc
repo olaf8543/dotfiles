@@ -8,11 +8,12 @@
   "margin-right": 10,
   "margin-left": 10,
   "margin-top": 2,
-  "modules-left": [ "hyprland/workspaces","hyprland/window", "mpris"],
-  "modules-center": ["clock"],
+  "modules-left": [ "hyprland/workspaces", "mpris"],
+  "modules-center": ["hyprland/window" ],
   "modules-right": [
     "group/tray-expander",
     "group/ctl",
+    "clock",
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -223,6 +224,7 @@
 	"orientation": "inherit",
 	"modules": [
     "custom/screenrecording-indicator",
+    "idle_inhibitor",
     "custom/update", 
     "custom/separator#blank",
     "bluetooth",
