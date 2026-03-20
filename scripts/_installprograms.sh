@@ -5,6 +5,8 @@
 
 sudo pacman -Syu fish ripgrep flatpak kanata pacman-contrib strawberry yazi rust-analyzer kid3 qt6ct kvantum bluez-utils kdenlive kdeconnect zathura zathura-pdf-mupdf
 
+yay -S ticktick
+
 # Install zen browser and make it default browser
 flatpak install flathub app.zen_browser.zen
 xdg-settings set default-web-browser app.zen_browser.zen.desktop

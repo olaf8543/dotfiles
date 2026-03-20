@@ -19,6 +19,7 @@ decorations = "None"
 bindings = [
 { key = "Insert", mods = "Shift", action = "Paste" },
 { key = "Insert", mods = "Control", action = "Copy" },
+  { key = "Return", mods = "Shift", chars = "\u001B\r" },
 { key= "Space", mods= "Alt", action= "ToggleViMode" },
 { key= "Q", mode= "Vi|~Search", action= "ToggleViMode" },
 { key= "Y", mode= "Vi|~Search", action= "Copy" },
@@ -28,3 +29,6 @@ bindings = [
 
 [terminal.shell]
 program = "/usr/bin/fish"
+
+[terminal]
+osc52 = "CopyPaste"

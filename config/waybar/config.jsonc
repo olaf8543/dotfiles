@@ -8,7 +8,7 @@
   "margin-right": 10,
   "margin-left": 10,
   "margin-top": 2,
-  "modules-left": [ "hyprland/workspaces","hyprland/window", "mpris"],
+  "modules-left": [ "hyprland/workspaces", "mpris"],
   "modules-center": ["clock"],
   "modules-right": [
     "group/tray-expander",
@@ -110,6 +110,7 @@
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
+      "headset": "",
       "default": [
         "",
         " ",
@@ -134,6 +135,18 @@
     "on-click": "omarchy-cmd-screenrecord",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
+    "return-type": "json"
+  },
+  "custom/idle-indicator": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
+  },
+  "custom/notification-silencing-indicator": {
+    "on-click": "omarchy-toggle-notification-silencing",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "signal": 10,
     "return-type": "json"
   },
   "tray": {
