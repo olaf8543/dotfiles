@@ -36,3 +36,4 @@ vim.keymap.set("n", "<leader>lg", function() Snacks.lazygit({ cwd = LazyVim.root
     { desc = "Lazygit (Root Dir)" })
 vim.keymap.set("n", "<leader>lG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
 vim.keymap.set({ "n", "v" }, "<leader>j", "<cmd>BufferLinePick<CR>", { desc = "Delete without yanking" })
+vim.keymap.set({ "n" }, "<leader>bd", "<cmd>BufferLinePickClose<CR>", { desc = "Delete without yanking" })

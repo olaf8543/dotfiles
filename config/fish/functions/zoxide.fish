@@ -18,7 +18,5 @@ if type -q zoxide
     end
 
     # make plain `cd` call the zd wrapper (mirrors alias cd="zd" in bash)
-    function cd
-        zd $argv
-    end
+    alias cd zd
 end

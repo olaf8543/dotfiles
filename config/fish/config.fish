@@ -40,3 +40,7 @@ if status is-interactive
     starship init fish | source
     _conditional_fetch
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/oh/.lmstudio/bin
+# End of LM Studio CLI section
