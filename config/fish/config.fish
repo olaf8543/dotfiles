@@ -20,7 +20,6 @@ if status is-interactive
     alias cds zi
     alias cdS "__fzf_helper d \"tree -C\" \"z\" ~"
     alias cdh "__fzf_helper d \"tree -C\" \"z\" ."
-    alias hamil "wezterm ssh hamilton.se.rit.edu"
     alias clear "command clear && _conditional_fetch"
     alias ls "eza --icons --group-directories-first"
     alias la "ls -lha"
